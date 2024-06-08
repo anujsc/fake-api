@@ -1,7 +1,30 @@
+import axios from "axios";
 import React from "react";
-import { Link } from "react-router-dom";
+
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
 function Details() {
+  const {id}=useParams();
+  const [products, setproducts] = useState(null);
+  const getsingleproducts =async() =>{
+    try {
+        const {data} = await axios.get(`/products/${id}`);
+        console.log(data);
+    } catch (error) {
+        console.log(error);
+    }
+  }
+
+  useEffect(()=>{
+    getsingleproducts();
+  },[])
+
+  // if (!products) {
+  //   return <div>Loading...</div>; // Handle case where products might be null
+  // }
+
+  
   return (
     <div className="w-[80%] h-full  m-auto p-[10%] flex items-center  gap-[9vh]  ">
       <img
