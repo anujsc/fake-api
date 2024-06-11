@@ -26,7 +26,7 @@ function Home() {
       setfilterproducts(products)
     
     if (category != "undefined")  
-      getproducts();
+      setfilterproducts(products.filter(p=>p.category==category));
     
   },[category,products]);
 
@@ -35,6 +35,8 @@ function Home() {
   if (!products) {
     return <div>Loading...</div>; 
   }
+
+  console.log(products);
 
   return (
     <>
