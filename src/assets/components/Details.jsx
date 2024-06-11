@@ -27,6 +27,7 @@ function Details() {
   
   return (
     <div className="w-[80%] h-full  m-auto p-[10%] flex items-center  gap-[9vh]  ">
+      <Link to="/" className=' font-semibold text-sky-600 border rounded-3xl mb-3 border-sky-600 px-3 py-1 '>Home</Link>
       <img
       className="h-[60vh] w-[45vh] object-contain "
         src={`${products.image}`}
