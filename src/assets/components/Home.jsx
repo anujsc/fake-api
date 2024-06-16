@@ -12,14 +12,14 @@ function Home() {
   
  const [filterproducts, setfilterproducts] = useState(null)
 
-  const getproducts = async()=>{
-    try {
-        const {data} = await axios.get(`/products/category/${category}`);
-       setfilterproducts (data);
-    } catch (error) {
-        console.log(error);
-    }
-  }
+  // const getproducts = async()=>{
+  //   try {
+  //       const {data} = await axios.get(`/products/category/${category}`);
+  //      setfilterproducts (data);
+  //   } catch (error) {
+  //       console.log(error);
+  //   }
+  // }
 
   useEffect(()=>{
     if (!filterproducts || category=="undefined") 
